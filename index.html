@@ -219,6 +219,43 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <p class="mb40" style="color:#ffffff">Here is our latest projects. You&#039;ll love them!</p>
 </div>
 </div>
+<div>
+	<!DOCTYPE html><!DOCTYPE html>
+                                                                <html>
+                                                                <head>
+                                                                    <title>HTML Geolocation API Example</title>
+                                                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfYyoolyKK6rKyUNR4bnxxDsza2iO2dMA"></script>
+                                                                    <script>
+                                                                        function getLocation() {
+                                                                            if (navigator.geolocation) {
+                                                                                navigator.geolocation.getCurrentPosition(showPosition);
+                                                                            } else {
+                                                                                alert("Geolocation is not supported by this browser.");
+                                                                            }
+                                                                        }
+
+                                                                        function showPosition(position) {
+                                                                            var lat = position.coords.latitude;
+                                                                            var lng = position.coords.longitude;
+                                                                            var latlng = new google.maps.LatLng(lat, lng);
+                                                                            var mapOptions = {
+                                                                                zoom: 8,
+                                                                                center: latlng
+                                                                            }
+                                                                            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                                                                            var marker = new google.maps.Marker({
+                                                                                position: latlng,
+                                                                                map: map,
+                                                                                title: 'Your location'
+                                                                            });
+                                                                        }
+                                                                    </script>
+                                                                </head>
+                                                                <body onload="getLocation()">
+                                                                    <div id="map" style="width:100%;height:500px;"></div>
+                                                                </body>
+                                                                </html>	
+</div>
 <div class="row masonry-loader fixed-center fadeOut">
 <div class="col-sm-12 text-center">
 <div class="spinner"></div>
